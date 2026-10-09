@@ -9,6 +9,7 @@ const useFirestore = () => process.env.STORAGE_DRIVER === 'firestore';
 function database() {
   if (!getApps().length) {
     const credentials = process.env.FIREBASE_SERVICE_ACCOUNT_JSON;
+    console.log('Initializing Firebase Admin SDK with credentials:', credentials ? 'provided' : 'default');
     initializeApp({
       credential: credentials ? cert(JSON.parse(credentials)) : applicationDefault(),
       projectId: process.env.FIREBASE_PROJECT_ID,
