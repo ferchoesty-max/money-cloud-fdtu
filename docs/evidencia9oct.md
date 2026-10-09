@@ -647,7 +647,8 @@ CORS_ORIGIN=http://localhost:5173
 
 ---
 
-## 📸 Evidencias de Ejecución
+## 📸 Evidencias de Entrega
 
-- Captura del Dashboard interactivo con cálculo de balance e ingresos/egresos: `docs/evidencia_dashboard_9oct.png`
-- Grabación de prueba funcional completa: `docs/evidencia_video_9oct.webp`
+- **Imagen de los registros en Firebase:** `docs/evidencia_firebase_9oct.png`
+- **Video mostrando la funcionalidad de la app (MP4):** `docs/evidencia_video_9oct.mp4`
+
