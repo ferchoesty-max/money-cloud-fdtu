@@ -49,6 +49,8 @@ coverage/
 .DS_Store
 *.log
 firebase-service-account*.json
+*firebase-adminsdk*.json
+*-adminsdk-*.json
 ```
 
 ---

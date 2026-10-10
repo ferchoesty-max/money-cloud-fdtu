@@ -14,12 +14,13 @@ if (fs.existsSync(videoTempDir)) {
 fs.mkdirSync(videoTempDir, { recursive: true });
 
 // 1. Conectar a Firestore y obtener los registros reales
-const sa = JSON.parse(fs.readFileSync("/home/fernando/Documents/UniversidadMega/Materias/Computo_en_la_Nube/ParkingFlow/parkingflow-ferch-firebase-adminsdk-fbsvc-6026192a10.json", "utf8"));
+const sa = JSON.parse(fs.readFileSync("/home/fernando/Documents/UniversidadMega/Materias/Computo_en_la_Nube/money-cloud-fdtu/money-cloud-fdtu-firebase-adminsdk-fbsvc-98ee0d98cb.json", "utf8"));
 const fbApp = initializeApp({
   credential: cert(sa),
   projectId: sa.project_id
 }, "verifier-" + Date.now());
 const db = getFirestore(fbApp);
+
 
 const snap = await db.collection("moneycloud_demo_transactions").orderBy("createdAt", "desc").get();
 const firestoreDocs = [];
@@ -298,9 +299,6 @@ await renderPage.waitForTimeout(1000);
 const screenshotPath = path.join(docsDir, "evidencia_firebase_9oct.png");
 await renderPage.screenshot({ path: screenshotPath });
 console.log(`Captura de Firebase guardada en: ${screenshotPath}`);
-
-// Also save as evidencia_bd_firestore_9oct.png for consistency
-fs.copyFileSync(screenshotPath, path.join(docsDir, "evidencia_bd_firestore_9oct.png"));
 
 await renderPage.close();
 await browser.close();
